@@ -1,0 +1,683 @@
+====================================================
+  AI VIBE CODER - COMPLETE PLUGIN PACKAGE
+  Ready for Upload and Testing on WordPress Hosting
+====================================================
+
+  Package Version: 1.0.0
+  Created: January 2024
+  WordPress Version: 5.0+
+  PHP Version: 7.4+
+
+====================================================
+  PACKAGE CONTENTS
+====================================================
+
+This package contains a complete, production-ready WordPress plugin with all necessary files for immediate installation and testing.
+
+COMPLETE FILE STRUCTURE
+-----------------------
+
+ai-vibe-coder/
+├──
+│
+├── ai-vibe-coder.php                 [MAIN PLUGIN FILE - 504 lines]
+│   │
+│   ├── Plugin initialization and class structure
+│   ├── Menu registration for admin dashboard
+│   ├── AJAX handlers for all interactive features
+│   ├── Shortcode registration for frontend embedding
+│   ├── Asset enqueuing for CSS and JavaScript
+│   ├── Activation hooks for database setup
+│   └── Deactivation hooks for cleanup
+│
+├── readme.txt                        [153 lines]
+│   │
+│   ├── Plugin metadata for WordPress.org
+│   ├── Feature descriptions
+│   ├── Installation instructions
+│   ├── Frequently asked questions
+│   ├── Screenshots reference
+│   └── Changelog and upgrade notices
+│
+├── uninstall.php                     [21 lines]
+│   │
+│   ├── Option cleanup on plugin removal
+│   ├── Database table deletion
+│   └── Cache flushing
+│
+├── INSTALLATION.txt                  [366 lines]
+│   │
+│   ├── Pre-installation checklist
+│   ├── Method A: ZIP file upload guide
+│   ├── Method B: File Manager upload guide
+│   ├── Initial configuration steps
+│   ├── Detailed testing procedures
+│   └── Troubleshooting common issues
+│
+├── TESTING.txt                       [778 lines]
+│   │
+│   ├── Section 1: Installation tests
+│   ├── Section 2: Dashboard tests
+│   ├── Section 3: Code Generator tests
+│   ├── Section 4: Snippets Library tests
+│   ├── Section 5: Content AI tests
+│   ├── Section 6: Settings tests
+│   ├── Section 7: Frontend Shortcode tests
+│   ├── Section 8: Security tests
+│   ├── Section 9: Performance tests
+│   └── Section 10: Compatibility tests
+│
+├── README.txt                        [143 lines]
+│   │
+│   ├── Package contents overview
+│   ├── Quick installation steps
+│   ├── Shortcode usage guide
+│   ├── Feature overview
+│   ├── Configuration reference
+│   └── Support resources
+│
+├── assets/
+│   │
+│   ├── index.php                     [4 lines]
+│   │   └── Directory protection file
+│   │
+│   ├── css/
+│   │   ├── admin.css                 [622 lines]
+│   │   │   ├── Dashboard styles
+│   │   │   ├── Card components
+│   │   │   ├── Statistics display
+│   │   │   ├── Form elements
+│   │   │   ├── Button styles
+│   │   │   ├── Code editor styling
+│   │   │   ├── Tab navigation
+│   │   │   ├── Prompt pills
+│   │   │   ├── Snippets table
+│   │   │   ├── Badge components
+│   │   │   ├── Loading spinner
+│   │   │   ├── Alert messages
+│   │   │   ├── Quick actions grid
+│   │   │   ├── Modal dialogs
+│   │   │   ├── Toast notifications
+│   │   │   └── Responsive design
+│   │   │
+│   │   └── frontend.css              [434 lines]
+│   │       ├── Main container styles
+│   │       ├── Form input styling
+│   │       ├── Button components
+│   │       ├── Card layout
+│   │       ├── Code output display
+│   │       ├── Loading animation
+│   │       ├── Action buttons
+│   │       ├── Section titles
+│   │       ├── Type selector
+│   │       ├── Toast notifications
+│   │       ├── Copy button
+│   │       ├── Description box
+│   │       ├── Example pills
+│   │       └── Mobile responsive styles
+│   │
+│   └── js/
+│       └── admin.js                  [470 lines]
+│       │
+│       ├── Event binding for all interactions
+│       ├── Code generation handler
+│       ├── Snippet save functionality
+│       ├── Snippet deployment handler
+│       ├── Snippet deletion handler
+│       ├── Copy to clipboard function
+│       ├── Example prompt handlers
+│       ├── Type selector handlers
+│       ├── Content generation handler
+│       ├── Draft save functionality
+│       ├── Settings save handler
+│       ├── API test connection handler
+│       ├── Search functionality
+│       ├── Tab switching logic
+│       └── Toast notification system
+│
+├── includes/
+│   │
+│   ├── index.php                     [4 lines]
+│   │   └── Directory protection file
+│   │
+│   ├── class-api-handler.php         [261 lines]
+│   │   │
+│   │   ├── Singleton pattern implementation
+│   │   ├── API key management
+│   │   ├── Provider selection (OpenAI/Anthropic)
+│   │   ├── Model configuration
+│   │   ├── Temperature settings
+│   │   ├── Max tokens configuration
+│   │   ├── API request construction
+│   │   ├── OpenAI API endpoint integration
+│   │   ├── Anthropic API endpoint integration
+│   │   ├── Response parsing and error handling
+│   │   ├── Connection testing functionality
+│   │   ├── Available models retrieval
+│   │   └── Available providers retrieval
+│   │
+│   ├── class-code-generator.php      [327 lines]
+│   │   │
+│   │   ├── Code generation orchestration
+│   │   ├── System prompts for each code type
+│   │   ├── Shortcode system prompt
+│   │   ├── Widget system prompt
+│   │   ├── Function system prompt
+│   │   ├── CSS system prompt
+│   │   ├── JavaScript system prompt
+│   │   ├── Post type system prompt
+│   │   ├── Taxonomy system prompt
+│   │   ├── Plugin system prompt
+│   │   ├── User message construction
+│   │   ├── Code block parsing from AI response
+│   │   ├── Explanation extraction
+│   │   ├── Code type options retrieval
+│   │   └── Example prompts for each type
+│   │
+│   ├── class-content-generator.php   [415 lines]
+│   │   │
+│   │   ├── Content generation orchestration
+│   │   ├── System prompts for content types
+│   │   ├── Blog post system prompt
+│   │   ├── Page system prompt
+│   │   ├── Excerpt system prompt
+│   │   ├── Title system prompt
+│   │   ├── Meta description system prompt
+│   │   ├── Product description system prompt
+│   │   ├── User message construction
+│   │   ├── Content parsing and formatting
+│   │   ├── Draft creation and saving
+│   │   ├── Title auto-generation
+│   │   ├── Content type options retrieval
+│   │   ├── Content improvement functionality
+│   │   ├── Content translation functionality
+│   │   └── Content summarization functionality
+│   │
+│   └── class-snippet-manager.php     [330 lines]
+│       │
+│       ├── Snippet database operations
+│       ├── Snippet creation and storage
+│       ├── Snippet retrieval by ID
+│       ├── All snippets retrieval
+│       ├── Snippet search functionality
+│       ├── Snippet deletion
+│       ├── Snippet deployment tracking
+│       ├── Snippet count by type
+│       ├── Total count retrieval
+│       ├── Deployed count retrieval
+│       ├── Snippet export functionality
+│       ├── Snippet import functionality
+│       ├── Recent snippets retrieval
+│       └── Database cleanup functionality
+│
+├── languages/
+│   │
+│   └── ai-vibe-coder.pot             [62 lines]
+│       │
+│       ├── Translation template header
+│       ├── Plugin name translation
+│       ├── Menu item translations
+│       └── Common string translations
+│
+└── templates/
+    │
+    ├── index.php                     [4 lines]
+    │   └── Directory protection file
+    │
+    ├── dashboard.php                 [183 lines]
+    │   │
+    │   ├── Statistics cards display
+    │   ├── API status indicator
+    │   ├── Quick actions grid
+    │   ├── Recent snippets table
+    │   └── How to use instructions
+    │
+    ├── generator.php                 [163 lines]
+    │   │
+    │   ├── Code type selector buttons
+    │   ├── Prompt input textarea
+    │   ├── Context input textarea
+    │   ├── Generate button
+    │   ├── Example prompt items
+    │   ├── Code output textarea
+    │   ├── Copy functionality
+    │   ├── Explanation display area
+    │   └── Snippet save form
+    │
+    ├── snippets.php                  [174 lines]
+    │   │
+    │   ├── Search input field
+    │   ├── New snippet button
+    │   ├── Snippets data table
+    │   ├── Snippet view modal
+    │   ├── Snippet deployment button
+    │   ├── Snippet deletion button
+    │   └── Empty state display
+    │
+    ├── content.php                   [128 lines]
+    │   │
+    │   ├── Content type selector
+    │   ├── Title input field
+    │   ├── Prompt textarea
+    │   ├── Generate button
+    │   ├── Example prompt pills
+    │   ├── Content output textarea
+    │   ├── Save as draft button
+    │   ├── Preview button
+    │   └── Copy functionality
+    │
+    ├── settings.php                  [236 lines]
+    │   │
+    │   ├── API provider selection
+    │   ├── API key input field
+    │   ├── Model selection dropdown
+    │   ├── Temperature slider
+    │   ├── Max tokens input
+    │   ├── Test connection button
+    │   ├── Feature toggle checkboxes
+    │   ├── Auto-save toggle
+    │   ├── Save settings button
+    │   └── Help section
+    │
+    └── frontend-generator.php        [279 lines]
+        │
+        ├── Frontend container
+        ├── Card layout wrapper
+        ├── Code type selector
+        ├── Prompt textarea
+        ├── Generate button
+        ├── Example pills
+        ├── Loading state display
+        ├── Result card with code output
+        ├── Copy button
+        ├── Explanation section
+        ├── Action buttons
+        ├── Error display area
+        └── Toast notification container
+
+====================================================
+  QUICK START GUIDE (5 MINUTES)
+====================================================
+
+STEP 1: CREATE ZIP FILE
+-----------------------
+1. On your computer, select all files inside ai-vibe-coder folder
+2. Right-click and select "Send to > Compressed (zipped) folder"
+3. Rename the file to "ai-vibe-coder.zip"
+
+STEP 2: UPLOAD TO WORDPRESS
+---------------------------
+1. Go to your WordPress admin dashboard
+2. Navigate to Plugins > Add New
+3. Click "Upload Plugin"
+4. Choose ai-vibe-coder.zip
+5. Click "Install Now"
+6. Click "Activate Plugin"
+
+STEP 3: CONFIGURE API KEY
+--------------------------
+1. Go to AI Vibe Coder > Settings
+2. Select provider: "OpenAI (GPT)" or "Anthropic (Claude)"
+3. Paste your API key
+4. Select model (GPT-4 recommended)
+5. Click "Save Settings"
+6. Click "Test Connection"
+
+STEP 4: TEST THE PLUGIN
+-----------------------
+1. Go to AI Vibe Coder > Code Generator
+2. Select "Shortcode" type
+3. Enter: "Create a button shortcode"
+4. Click "Generate Code with AI"
+5. Wait for code to appear
+6. Click "Save Snippet"
+
+STEP 5: TEST FRONTEND SHORTCODE
+--------------------------------
+1. Create a new WordPress page
+2. Add shortcode block with: [ai_vibe_coder]
+3. Publish and view the page
+4. Test code generation from frontend
+
+====================================================
+  SHORTCODE DOCUMENTATION
+====================================================
+
+PRIMARY SHORTCODE: [ai_vibe_coder]
+-----------------------------------
+
+This shortcode embeds the complete AI Code Generator interface on any WordPress page, post, or widget area. Visitors can generate code without accessing the admin dashboard.
+
+BASIC USAGE:
+  [ai_vibe_coder]
+
+RESULT: Full generator interface with all code types
+
+PARAMETERS:
+
+  type (optional)
+  - Description: Preselect the code type for users
+  - Values: shortcode, widget, function, css, javascript, post_type, taxonomy
+  - Default: generator
+  - Example: [ai_vibe_coder type="css"]
+
+SHORTCODE OUTPUT:
+  The shortcode outputs a complete, styled interface including:
+
+  1. Type Selector Buttons
+     - Shortcode (default)
+     - Widget
+     - Function
+     - CSS Styles
+     - JavaScript
+     - Custom Post Type
+     - Custom Taxonomy
+
+  2. Prompt Input Area
+     - Textarea for describing desired code
+     - Placeholder text with examples
+     - Auto-expanding height
+
+  3. Generate Button
+     - Prominent call-to-action
+     - Loading state during generation
+     - Disabled state while processing
+
+  4. Example Prompts
+     - Quick-start suggestions
+     - Clickable pills that fill the prompt
+     - Type-specific examples
+
+  5. Code Output Area
+     - Syntax-highlighted code display
+     - Copy-to-clipboard button
+     - Horizontal scrolling for long code
+
+  6. Action Buttons
+     - Advanced Editor link
+     - Generate Another button
+
+  7. Error Handling
+     - Graceful error display
+     - Retry functionality
+     - Helpful error messages
+
+  8. Toast Notifications
+     - Success notifications
+     - Error notifications
+     - Copy confirmation
+
+FRONTEND EXAMPLE:
+-----------------
+
+Create a page with this content:
+
+  [ai_vibe_coder type="css]
+
+  <h2>Generate Custom CSS</h2>
+  <p>Use the tool above to create custom CSS for your site.</p>
+
+This creates a CSS-focused generator page with explanatory content.
+
+WIDGET AREA USAGE:
+------------------
+Add the shortcode to any widget area via Appearance > Widgets:
+
+1. Add a Text widget
+2. Enter: [ai_vibe_coder]
+3. Save the widget
+4. The generator appears in your sidebar
+
+POST/ PAGE CONTENT:
+-------------------
+Add the shortcode to any WordPress content:
+
+1. Edit a post or page
+2. Add a Shortcode block or Classic Editor shortcode
+3. Enter: [ai_vibe_coder]
+4. Publish or update
+
+====================================================
+  API CONFIGURATION
+====================================================
+
+GETTING AN OPENAI API KEY:
+--------------------------
+
+1. Visit https://platform.openai.com
+2. Create account or sign in
+3. Click profile > API Keys
+4. Click "Create new secret key"
+5. Copy the key immediately (shown once)
+6. Store securely (cannot retrieve later)
+
+GETTING AN ANTHROPIC API KEY:
+-----------------------------
+
+1. Visit https://console.anthropic.com
+2. Create account or sign in
+3. Navigate to API Keys
+4. Create a new key
+5. Copy and store securely
+
+SETTINGS CONFIGURATION:
+-----------------------
+
+Provider Options:
+  - OpenAI (GPT-4, GPT-3.5 Turbo)
+  - Anthropic (Claude Sonnet 4, Claude Opus 4)
+
+Model Recommendations:
+  - GPT-4: Best quality, highest cost
+  - GPT-4 Turbo: Good quality, faster, cheaper
+  - GPT-3.5 Turbo: Fast, cost-effective
+  - Claude Sonnet 4: Balanced performance
+  - Claude Opus 4: Highest capability
+
+Temperature Setting:
+  - 0.3: Most focused, least creative
+  - 0.5: Balanced (recommended for code)
+  - 0.7: More creative
+  - 0.9: Most creative, least predictable
+
+Max Tokens:
+  - Code generation: 1000-2000
+  - Content generation: 2000-4000
+  - Maximum: 16000
+
+====================================================
+  TESTING CHECKLIST
+====================================================
+
+Complete these tests after installation:
+
+INSTALLATION TESTS:
+  □ Plugin appears in Plugins list
+  □ Plugin activates without errors
+  □ AI Vibe Coder menu appears in admin
+  □ All submenu items present
+
+DASHBOARD TESTS:
+  □ Statistics cards display
+  □ API status shows configured (✓)
+  □ Quick actions are clickable
+  □ Recent snippets table loads
+
+CODE GENERATOR TESTS:
+  □ Page loads without errors
+  □ Type selector buttons work
+  □ Generate button responds
+  □ Code appears in output
+  □ Copy button works
+  □ Save snippet form works
+  □ Example prompts fill input
+
+SNIPPETS LIBRARY TESTS:
+  □ Saved snippets appear in table
+  □ Search filters results
+  □ View button opens modal
+  □ Deploy button updates status
+  □ Delete button removes snippet
+
+CONTENT AI TESTS:
+  □ Content page loads
+  □ Content type selector works
+  □ Generate content button responds
+  □ Output displays HTML correctly
+  □ Copy content works
+
+SETTINGS TESTS:
+  □ Settings page loads
+  □ API key saves correctly
+  □ Model selection works
+  □ Test connection responds
+  □ Feature toggles save
+  □ Auto-save toggle works
+
+FRONTEND SHORTCODE TESTS:
+  □ [ai_vibe_coder] displays interface
+  □ Type selector works
+  □ Generate button works
+  □ Code output displays
+  □ Copy functionality works
+  □ Toast notifications appear
+
+====================================================
+  FILE PERMISSIONS
+====================================================
+
+Required permissions for manual upload:
+
+  Folders: 755 (rwxr-xr-x)
+  Files: 644 (rw-r--r--)
+
+To set permissions in File Manager:
+
+1. Right-click the folder or file
+2. Select "Change Permissions"
+3. Enter 755 for folders or 644 for files
+4. Click "Change Permissions"
+
+====================================================
+  TROUBLESHOOTING QUICK REFERENCE
+====================================================
+
+PROBLEM: Plugin doesn't appear after upload
+SOLUTION:
+  1. Verify ai-vibe-coder folder in /wp-content/plugins/
+  2. Check ai-vibe-coder.php is in the folder root
+  3. Check WordPress error logs
+  4. Re-upload files if corrupted
+
+PROBLEM: Menu items missing
+SOLUTION:
+  1. Deactivate and reactivate plugin
+  2. Check for PHP errors on activation
+  3. Verify WordPress version compatibility
+
+PROBLEM: API connection fails
+SOLUTION:
+  1. Verify API key copied correctly (no spaces)
+  2. Check account has credits/usage available
+  3. Try different browser (cache issues)
+  4. Contact hosting about outbound HTTPS
+
+PROBLEM: Generate button does nothing
+SOLUTION:
+  1. Open browser developer console (F12)
+  2. Check for JavaScript errors
+  3. Verify nonce is working
+  4. Check WordPress AJAX endpoint
+
+PROBLEM: Code output is empty
+SOLUTION:
+  1. Check API response in network tab
+  2. Verify model is selected
+  3. Check temperature setting
+  4. Try different prompt
+
+PROBLEM: White screen of death
+SOLUTION:
+  1. Enable WP_DEBUG in wp-config.php
+  2. Check debug.log for errors
+  3. Increase PHP memory limit
+  4. Deactivate conflicting plugins
+
+PROBLEM: Shortcode doesn't display
+SOLUTION:
+  1. Verify exact shortcode: [ai_vibe_coder]
+  2. Check if shortcode is being filtered
+  3. Try in a plain page (no page builder)
+  4. Verify template file exists
+
+====================================================
+  TECHNICAL SPECIFICATIONS
+====================================================
+
+MINIMUM REQUIREMENTS:
+  - WordPress 5.0 or higher
+  - PHP 7.4 or higher
+  - 50MB disk space
+  - cURL support enabled
+  - OpenSSL support enabled
+
+RECOMMENDED CONFIGURATION:
+  - WordPress 6.4 or higher
+  - PHP 8.0 or higher
+  - 256MB PHP memory limit
+  - 60 second max execution time
+
+DATABASE:
+  - Table prefix: wp_ai_vibe_snippets
+  - Fields: id, name, type, code, description, tags, deployed, created_at, updated_at
+
+AJAX ENDPOINTS:
+  - wp-admin/admin-ajax.php?action=ai_vibe_generate_code
+  - wp-admin/admin-ajax.php?action=ai_vibe_save_snippet
+  - wp-admin/admin-ajax.php?action=ai_vibe_get_snippets
+  - wp-admin/admin-ajax.php?action=ai_vibe_delete_snippet
+  - wp-admin/admin-ajax.php?action=ai_vibe_generate_content
+  - wp-admin/admin-ajax.php?action=ai_vibe_deploy_snippet
+
+NONCE:
+  - Action: ai_vibe_coder_nonce
+  - Generated via wp_create_nonce()
+
+====================================================
+  NEXT STEPS
+====================================================
+
+After successful testing:
+
+1. Configure all settings as needed
+2. Test with different code types
+3. Create example snippets for your use case
+4. Add the shortcode to your main site page
+5. Share with users or clients
+6. Consider submitting to WordPress.org
+
+For WordPress.org submission, see SUBMISSION.txt for detailed instructions.
+
+====================================================
+  SUPPORT INFORMATION
+====================================================
+
+For issues with this plugin:
+
+1. Review INSTALLATION.txt for setup issues
+2. Review TESTING.txt for feature issues
+3. Check WordPress debug logs
+4. Verify hosting environment compatibility
+5. Review API provider status
+
+For InfinityFree hosting specific issues:
+
+1. Check PHP version in cPanel
+2. Verify outgoing connections allowed
+3. Check available disk space
+4. Review PHP error logs in File Manager
+5. Contact InfinityFree support if needed
+
+====================================================
+  END OF PACKAGE DOCUMENTATION
+====================================================

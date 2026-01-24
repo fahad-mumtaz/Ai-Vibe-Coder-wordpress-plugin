@@ -1,0 +1,778 @@
+================================================
+  AI VIBE CODER - TESTING CHECKLIST
+  Comprehensive Testing Guide for WordPress Plugin
+================================================
+
+Use this checklist to systematically test all features of the AI Vibe Coder plugin.
+
+TEST TRACKING
+-------------
+Test Date: ___________________
+Tester Name: _________________
+WordPress Version: ___________
+PHP Version: _________________
+Hosting: InfinityFree (or other)
+API Provider: OpenAI / Anthropic
+
+STATUS LEGEND
+-------------
+✓ PASS = Test passed successfully
+✗ FAIL = Test failed (see notes)
+⚠ PARTIAL = Test partially passed
+○ SKIP = Test not applicable
+
+================================================
+SECTION 1: INSTALLATION TESTS
+================================================
+
+1.1 File Upload Test
+---------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ All plugin files uploaded successfully
+□ File structure correct (ai-vibe-coder/ folder)
+□ No missing files or folders
+□ File permissions correct (644 for files, 755 for folders)
+
+1.2 Plugin Activation Test
+---------------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Plugin appears in Plugins list
+□ Plugin activates without errors
+□ No PHP errors or warnings displayed
+□ No white screen of death
+
+1.3 Menu Registration Test
+---------------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Main menu item appears in admin sidebar
+□ All submenu items present:
+  - Dashboard
+  - Code Generator
+  - My Snippets
+  - Content AI
+  - Settings
+
+================================================
+SECTION 2: DASHBOARD TESTS
+================================================
+
+2.1 Dashboard Loading Test
+---------------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Dashboard page loads without errors
+□ Statistics cards display correctly
+□ Total Snippets count shown
+□ Deployed count shown
+□ API Status indicator shown
+□ Provider name displayed
+
+2.2 Quick Actions Test
+-----------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ All 4 action cards visible
+□ "Code Generator" card clickable
+□ "Content AI" card clickable
+□ "My Snippets" card clickable
+□ "Settings" card clickable
+□ Icons display correctly
+□ Descriptions clear and accurate
+
+2.3 Recent Snippets Test
+-------------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Recent snippets table loads
+□ Empty state shows when no snippets
+□ Snippet name displayed correctly
+□ Type badge shows correctly
+□ Status badge shows correctly
+□ Created date displayed
+□ Action buttons present
+
+2.4 How To Use Section Test
+----------------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ All 3 steps displayed
+□ Step icons visible
+□ Instructions clear and helpful
+□ Links functional (if any)
+
+================================================
+SECTION 3: CODE GENERATOR TESTS
+================================================
+
+3.1 Page Load Test
+-------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Code Generator page loads
+□ Two-column layout displays correctly
+□ Input column on left
+□ Output column on right
+
+3.2 Type Selector Test
+-----------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ All code type buttons visible:
+  - Shortcode (default active)
+  - Widget
+  - Function
+  - CSS
+  - JavaScript
+  - Post Type
+  - Taxonomy
+□ Clicking changes active state
+□ Correct type passed to API
+
+3.3 Prompt Input Test
+----------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Prompt textarea visible
+□ Placeholder text displays
+□ Can enter text in textarea
+□ Character limit reasonable
+□ Scroll works for long text
+
+3.4 Context Input Test
+-----------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Context textarea visible
+□ Placeholder text displays
+□ Optional field works correctly
+□ Additional info included in API call
+
+3.5 Generate Button Test
+-------------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Generate button visible and clickable
+□ Loading state shows during generation
+□ Button disables during generation
+□ Success state shows after generation
+□ Error state shows on failure
+
+3.6 Code Output Test
+---------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Code output textarea visible
+□ Generated code appears after completion
+□ Syntax highlighting (color scheme)
+□ Code wraps correctly
+□ Scroll works for long code
+
+3.7 Copy Functionality Test
+-----------------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Copy button visible
+□ Click copies code to clipboard
+□ Toast notification shows "Copied!"
+□ Works with long code
+□ Works with special characters
+
+3.8 Save Snippet Test
+----------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Save form visible after code generation
+□ Name field works
+□ Description field works
+□ Tags field works
+□ Save button clickable
+□ Success message appears
+□ Toast notification shows "Saved!"
+□ Can save multiple snippets
+
+3.9 Example Prompts Test
+-------------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Example prompts visible
+□ Clicking fills prompt textarea
+□ Multiple examples to choose from
+□ Examples relevant to selected type
+
+================================================
+SECTION 4: SNIPPETS LIBRARY TESTS
+================================================
+
+4.1 Page Load Test
+-------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Snippets page loads
+□ Search input visible
+□ New Snippet button visible
+□ Table header displays correctly
+
+4.2 Empty State Test
+---------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Empty state shows when no snippets
+□ Helpful message displays
+□ Link to create first snippet works
+
+4.3 Snippet Display Test
+-------------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Saved snippets appear in table
+□ Name displays correctly
+□ Type badge correct
+□ Description displays
+□ Tags display correctly
+□ Status badge correct
+□ Created date displays
+□ All columns display data
+
+4.4 Search Functionality Test
+------------------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Search input accepts text
+□ Typing filters results
+□ Search works by name
+□ Search works by description
+□ Search works by tags
+□ Results update in real-time
+
+4.5 View Snippet Test
+----------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ View button clickable
+□ Modal opens correctly
+□ Snippet details display
+□ Code displays in modal
+□ Copy button works in modal
+□ Modal closes properly
+
+4.6 Deploy Snippet Test
+------------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Deploy button clickable
+□ Confirmation prompt appears
+□ Success message shows
+□ Status changes to "Deployed"
+□ Toast notification appears
+
+4.7 Delete Snippet Test
+------------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Delete button clickable
+□ Confirmation dialog appears
+□ Cancel works correctly
+□ Confirm deletes snippet
+□ Snippet removed from table
+□ Success toast appears
+
+================================================
+SECTION 5: CONTENT AI TESTS
+================================================
+
+5.1 Page Load Test
+-------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Content AI page loads
+□ Two-column layout correct
+□ Input form visible
+□ Output textarea visible
+
+5.2 Content Type Selector Test
+--------------------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Content type dropdown visible
+□ All types available:
+  - Blog Post
+  - Page
+  - Excerpt
+  - Title
+  - Meta Description
+  - Product Description
+□ Selection works correctly
+
+5.3 Title Input Test
+---------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Title field visible
+□ Optional field works correctly
+□ Title saved with content
+
+5.4 Content Prompt Test
+------------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Prompt textarea visible
+□ Placeholder displays
+□ Input accepts text
+□ Scroll works properly
+
+5.5 Generate Content Test
+--------------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Generate button works
+□ Loading state shows
+□ Content generates successfully
+□ Output displays HTML properly
+□ Plain text version available
+
+5.6 Save as Draft Test
+-----------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Save as Draft button works
+□ Draft saves to Posts/Pages
+□ Title applied correctly
+□ Content applied correctly
+□ Status set to "Draft"
+
+5.7 Preview Test
+-----------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Preview button works
+□ Preview page opens
+□ Content displays correctly
+
+5.8 Copy Content Test
+----------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Copy button works
+□ Content copied correctly
+□ Toast notification shows
+
+================================================
+SECTION 6: SETTINGS TESTS
+================================================
+
+6.1 Settings Page Load Test
+----------------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Settings page loads
+□ All sections visible:
+  - API Configuration
+  - Features
+  - Auto-Save
+
+6.2 Provider Selection Test
+----------------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Provider dropdown visible
+□ OpenAI option available
+□ Anthropic option available
+□ Selection persists
+
+6.3 API Key Input Test
+-----------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ API key field visible
+□ Password masking works
+□ Can enter API key
+□ Can see/show password
+□ Validation works
+
+6.4 Model Selection Test
+-------------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Model dropdown visible
+□ Models available for provider
+□ Selection persists
+□ Models match provider
+
+6.5 Temperature Setting Test
+-----------------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Temperature slider visible
+□ Slider adjustable
+□ Value displays correctly
+□ Range (0-1) correct
+□ Default value set
+
+6.6 Max Tokens Setting Test
+----------------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Max tokens field visible
+□ Can enter number
+□ Validation works
+□ Reasonable default (2000)
+
+6.7 Test Connection Test
+-------------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Test Connection button works
+□ Loading state shows
+□ Success message appears
+□ Failure message appears
+□ Invalid key shows error
+
+6.8 Feature Toggles Test
+-------------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ All feature checkboxes visible:
+  - Shortcode Generator
+  - Widget Generator
+  - Content AI
+  - Function Generator
+□ Each can be toggled
+□ Selection persists
+
+6.9 Auto-Save Toggle Test
+---------------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Auto-save checkbox visible
+□ Toggle works
+□ Selection persists
+□ Affects code generation
+
+6.10 Save Settings Test
+------------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Save Settings button works
+□ Success toast appears
+□ Settings persist after reload
+□ No errors on save
+
+================================================
+SECTION 7: FRONTEND SHORTCODE TESTS
+================================================
+
+7.1 Shortcode Embed Test
+-------------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Shortcode [ai_vibe_coder] works
+□ Embeds in posts
+□ Embeds in pages
+□ Embeds in widgets (if text widget)
+
+7.2 Frontend Interface Test
+----------------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Frontend interface loads
+□ All elements display:
+  - Card container
+  - Type selector
+  - Prompt input
+  - Generate button
+  - Example prompts
+□ Styling applies correctly
+
+7.3 Frontend Generation Test
+------------------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Generation works from frontend
+□ Loading state shows
+□ Code displays correctly
+□ Copy function works
+
+7.4 Frontend Error Handling Test
+----------------------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ API errors show to user
+□ Empty prompt shows error
+□ Network errors handled
+□ Error messages helpful
+
+================================================
+SECTION 8: SECURITY TESTS
+================================================
+
+8.1 Nonce Verification Test
+----------------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ AJAX requests include nonce
+□ Invalid nonce rejected
+□ Expired nonce rejected
+
+8.2 Capability Check Test
+--------------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Non-admin users blocked
+□ Capability 'manage_options' enforced
+□ Proper error for unauthorized access
+
+8.3 Input Sanitization Test
+----------------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Prompt input sanitized
+□ Name field sanitized
+□ Description sanitized
+□ Tags sanitized
+□ No XSS vulnerabilities
+
+8.4 Output Escaping Test
+-------------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ HTML output escaped
+□ JavaScript output escaped
+□ Attribute output escaped
+□ URL output escaped
+
+8.5 SQL Injection Prevention Test
+-----------------------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Prepared statements used
+□ Input validated before SQL
+□ No SQL injection vulnerabilities
+
+================================================
+SECTION 9: PERFORMANCE TESTS
+================================================
+
+9.1 Page Load Speed Test
+-------------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Dashboard loads in < 2 seconds
+□ Code Generator loads < 2 seconds
+□ Snippets page loads < 2 seconds
+□ Content AI loads < 2 seconds
+□ Settings page loads < 2 seconds
+
+9.2 API Response Time Test
+---------------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Code generation < 30 seconds
+□ Content generation < 30 seconds
+□ Test connection < 5 seconds
+□ Save snippet < 1 second
+□ Load snippets < 1 second
+
+9.3 Memory Usage Test
+----------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Plugin uses < 10MB memory
+□ No memory leaks detected
+□ Large outputs handled correctly
+
+================================================
+SECTION 10: COMPATIBILITY TESTS
+================================================
+
+10.1 WordPress Version Test
+----------------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Works on WordPress 5.0+
+□ Works on WordPress 5.x
+□ Works on WordPress 6.x
+□ Latest version tested: _________
+
+10.2 PHP Version Test
+----------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Works on PHP 7.4
+□ Works on PHP 8.0
+□ Works on PHP 8.1
+□ Works on PHP 8.2
+
+10.3 Theme Compatibility Test
+------------------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Works with default theme
+□ Works with popular themes:
+  - Astra
+  - OceanWP
+  - GeneratePress
+  - Divi
+  - Elementor
+
+10.4 Plugin Compatibility Test
+-------------------------------
+Status: ○
+Notes: ______________________________________________
+
+Verification:
+□ Works with popular plugins:
+  - WooCommerce
+  - Yoast SEO
+  - Contact Form 7
+  - Elementor
+  - Gutenberg
+□ No major conflicts detected
+
+================================================
+TEST SUMMARY
+================================================
+
+Total Tests: _________
+Passed: _________
+Failed: _________
+Skipped: _________
+Pass Rate: _________%
+
+Critical Issues Found:
+1. ______________________________________________
+2. ______________________________________________
+3. ______________________________________________
+
+Minor Issues Found:
+1. ______________________________________________
+2. ______________________________________________
+3. ______________________________________________
+
+================================================
+NOTES
+================================================
+
+__________________________________________________
+__________________________________________________
+__________________________________________________
+__________________________________________________
+__________________________________________________
+
+================================================
+END OF TESTING CHECKLIST
+================================================

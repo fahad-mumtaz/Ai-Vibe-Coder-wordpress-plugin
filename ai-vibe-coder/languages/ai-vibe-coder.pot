@@ -1,0 +1,62 @@
+# AI Vibe Coder Language File
+# This is a placeholder for translations
+# Add translations in the format: msgid "Original" msgstr "Translation"
+
+msgid ""
+msgstr ""
+"Project-Id-Version: AI Vibe Coder 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Textdomain-Support: \n"
+
+# Plugin Name
+msgid "AI Vibe Coder"
+msgstr ""
+
+# Menu Items
+msgid "Dashboard"
+msgstr ""
+
+msgid "Code Generator"
+msgstr ""
+
+msgid "My Snippets"
+msgstr ""
+
+msgid "Content AI"
+msgstr ""
+
+msgid "Settings"
+msgstr ""
+
+# Common
+msgid "Generate"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Copy"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "Deploy"
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "Error"
+msgstr ""
+
+msgid "Success"
+msgstr ""

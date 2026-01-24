@@ -1,0 +1,366 @@
+================================================
+  AI VIBE CODER - INSTALLATION GUIDE
+  For WordPress Free Hosting (InfinityFree)
+================================================
+
+This guide will help you install and test the AI Vibe Coder plugin on your free WordPress hosting.
+
+TABLE OF CONTENTS
+-----------------
+1. Pre-Installation Checklist
+2. Installation Steps
+3. Initial Configuration
+4. Testing the Plugin
+5. Troubleshooting Common Issues
+6. Quick Start Guide
+
+================================================
+1. PRE-INSTALLATION CHECKLIST
+================================================
+
+Before you begin, ensure you have:
+
+□ WordPress site is installed and working
+□ Administrator access to WordPress dashboard
+□ An API key from OpenAI or Anthropic
+□ Basic knowledge of how to use cPanel/File Manager
+□ At least 50MB of available disk space
+
+To get an API key:
+
+For OpenAI:
+1. Go to https://platform.openai.com
+2. Sign up or log in to your account
+3. Click your profile picture > "API Keys"
+4. Click "Create new secret key"
+5. Copy and save the key securely
+
+For Anthropic:
+1. Go to https://console.anthropic.com
+2. Sign up or log in to your account
+3. Navigate to API Keys section
+4. Create a new API key
+5. Copy and save the key securely
+
+================================================
+2. INSTALLATION STEPS
+================================================
+
+METHOD A: ZIP FILE UPLOAD (RECOMMENDED)
+
+Step 1: Create the ZIP File
+----------------------------
+On your local computer:
+
+1. Navigate to the ai-vibe-coder folder
+2. Select ALL files and folders inside
+3. Right-click and select "Send to > Compressed (zipped) folder"
+   - Windows: Right-click > Send to > Compressed (zipped) folder
+   - Mac: Right-click > Compress
+4. Rename the file to "ai-vibe-coder.zip"
+5. Verify the ZIP contains:
+   - ai-vibe-coder.php
+   - readme.txt
+   - uninstall.php
+   - assets/ folder
+   - includes/ folder
+   - languages/ folder
+   - templates/ folder
+
+Step 2: Upload to WordPress
+----------------------------
+1. Log in to your WordPress admin dashboard
+2. Go to Plugins > Add New
+3. Click "Upload Plugin" button at the top
+4. Click "Choose File" and select ai-vibe-coder.zip
+5. Click "Install Now"
+6. Click "Activate Plugin"
+
+Step 3: Verify Installation
+----------------------------
+1. Look for "AI Vibe Coder" in your admin menu
+2. You should see these menu items:
+   - AI Vibe Coder (Dashboard)
+   - Code Generator
+   - My Snippets
+   - Content AI
+   - Settings
+
+METHOD B: MANUAL FILE UPLOAD (FILE MANAGER)
+
+Step 1: Upload Files via File Manager
+--------------------------------------
+1. Log in to your hosting File Manager (cPanel)
+2. Navigate to /wp-content/plugins/
+3. Click "Upload" button
+4. Upload the ai-vibe-coder.zip file
+5. After upload, right-click the zip file
+6. Select "Extract" or "Unzip"
+7. Verify a new folder "ai-vibe-coder" appears
+
+Step 2: Activate via WordPress Admin
+-------------------------------------
+1. Log in to WordPress admin dashboard
+2. Go to Plugins > Installed Plugins
+3. Find "AI Vibe Coder" in the list
+4. Click "Activate" below the plugin name
+
+Step 3: Verify Installation
+----------------------------
+Same as Method A, Step 3.
+
+================================================
+3. INITIAL CONFIGURATION
+================================================
+
+Step 1: Configure API Settings
+-------------------------------
+1. Go to AI Vibe Coder > Settings
+2. Scroll to "API Configuration" section
+3. Select your provider:
+   - OpenAI (GPT) for GPT-4, GPT-3.5 Turbo
+   - Anthropic (Claude) for Claude models
+4. Paste your API key in the "API Key" field
+5. Select your preferred model:
+   - GPT-4 (most capable, more expensive)
+   - GPT-4 Turbo (faster, slightly less capable)
+   - GPT-3.5 Turbo (fast, cost-effective)
+   - Claude Sonnet 4 (balanced performance)
+   - Claude Opus 4 (most capable Anthropic)
+6. Adjust temperature (recommended: 0.7)
+7. Click "Save Settings"
+
+Step 2: Test API Connection
+----------------------------
+1. Click "Test Connection" button
+2. Wait for the test to complete
+3. If successful, you'll see a success message
+4. If failed, check your API key and try again
+
+Step 3: Configure Features
+---------------------------
+1. Review the "Features" section
+2. Enable/disable features you want:
+   - Shortcode Generator
+   - Widget Generator
+   - Content AI
+   - Function Generator
+3. Enable "Auto-save" if you want to save generated code automatically
+4. Click "Save Settings"
+
+================================================
+4. TESTING THE PLUGIN
+================================================
+
+TEST 1: Check Dashboard
+-----------------------
+1. Go to AI Vibe Coder > Dashboard
+2. Verify you see:
+   - Statistics cards (Total Snippets, Deployed, API Status)
+   - Quick Actions grid
+   - Recent Snippets table
+   - "How to Use" section
+3. API Status should show as configured (✓)
+
+Expected: All elements visible, no error messages
+
+TEST 2: Generate a Shortcode
+-----------------------------
+1. Go to AI Vibe Coder > Code Generator
+2. Select "Shortcode" from type selector (default)
+3. In the prompt box, enter:
+   "Create a simple contact form shortcode with name, email, and message fields"
+4. Click "Generate Code with AI"
+5. Wait for AI response (may take 10-30 seconds)
+6. Verify code appears in output box
+
+Expected: PHP code with proper escaping, shortcode structure
+
+TEST 3: Save a Snippet
+-----------------------
+1. After generating code, enter:
+   - Name: "Contact Form Shortcode"
+   - Description: "A simple contact form"
+   - Tags: "contact, form, shortcode"
+2. Click "Save Snippet"
+3. Verify success message appears
+
+Expected: Toast notification "Saved!", snippet saved to library
+
+TEST 4: Check Snippets Library
+-------------------------------
+1. Go to AI Vibe Coder > My Snippets
+2. Verify your saved snippet appears in the table
+3. Check snippet details:
+   - Name displays correctly
+   - Type shows "shortcode"
+   - Status shows "Not Deployed"
+   - Created date is recent
+
+Expected: All snippet information displayed correctly
+
+TEST 5: Generate Content
+-------------------------
+1. Go to AI Vibe Coder > Content AI
+2. Select "Blog Post" from content type
+3. Enter prompt:
+   "Write about the benefits of AI in web development"
+4. Click "Generate Content with AI"
+5. Wait for AI response
+6. Verify content appears in output box
+
+Expected: HTML-formatted blog post about AI in web development
+
+TEST 6: Test Frontend Shortcode
+--------------------------------
+1. Create a new WordPress page
+2. Add a shortcode block
+3. Enter: [ai_vibe_coder]
+4. Publish the page
+5. View the page on frontend
+6. Verify the AI Code Generator interface appears
+
+Expected: Full frontend generator interface visible to visitors
+
+================================================
+5. TROUBLESHOOTING COMMON ISSUES
+================================================
+
+ISSUE: Plugin Doesn't Appear in Menu
+-------------------------------------
+Possible causes:
+- Plugin not activated
+- File structure incorrect
+- PHP error preventing loading
+
+Solutions:
+1. Go to Plugins > Installed Plugins
+2. Check if "AI Vibe Coder" is in the list
+3. If found, click "Activate"
+4. If not found, re-upload plugin files
+5. Check File Manager for correct folder structure
+6. Contact hosting support if files upload but don't appear
+
+ISSUE: API Connection Fails
+----------------------------
+Possible causes:
+- Invalid API key
+- Insufficient API credits
+- Network restrictions
+- Provider service outage
+
+Solutions:
+1. Verify API key is copied correctly (no extra spaces)
+2. Check OpenAI/Anthropic account for credits/usage
+3. Try a different browser or incognito mode
+4. Contact hosting support about outbound API connections
+5. Test with a different AI provider
+
+ISSUE: Generated Code Doesn't Work
+-----------------------------------
+Possible causes:
+- Code is incomplete
+- Missing closing tags
+- Conflicting with theme/other plugins
+
+Solutions:
+1. Copy code to a code editor for review
+2. Check for syntax errors
+3. Test in a clean WordPress installation
+4. Check WordPress error logs
+5. Try generating the code again
+
+ISSUE: White Screen / Blank Page
+---------------------------------
+Possible causes:
+- PHP error
+- Memory limit exceeded
+- Plugin conflict
+
+Solutions:
+1. Enable WordPress debug mode:
+   Edit wp-config.php:
+   define('WP_DEBUG', true);
+   define('WP_DEBUG_LOG', true);
+2. Check wp-content/debug.log for errors
+3. Increase memory limit:
+   Edit wp-config.php:
+   define('WP_MEMORY_LIMIT', '256M');
+4. Disable other plugins temporarily
+5. Switch to default WordPress theme
+
+ISSUE: File Upload Fails
+-------------------------
+Possible causes:
+- File size too large
+- Incorrect file format
+- File permissions
+- Storage quota exceeded
+
+Solutions:
+1. Check file size (should be under 10MB)
+2. Verify ZIP format (not RAR or 7z)
+3. Check file permissions (755 for folders, 644 for files)
+4. Contact hosting about storage limits
+5. Try uploading individual files instead
+
+ISSUE: Settings Don't Save
+---------------------------
+Possible causes:
+- Browser cache issue
+- Form validation error
+- Permission issue
+
+Solutions:
+1. Clear browser cache
+2. Try a different browser
+3. Check required fields are filled
+4. Verify wp-content/uploads is writable
+5. Check for JavaScript errors in console
+
+================================================
+6. QUICK START GUIDE
+================================================
+
+For the Impatient - Get Started in 5 Minutes:
+
+1. UPLOAD (1 minute)
+   - Upload ai-vibe-coder.zip via Plugins > Add New
+   - Click "Install Now"
+   - Click "Activate"
+
+2. CONFIGURE (2 minutes)
+   - Go to AI Vibe Coder > Settings
+   - Select "OpenAI (GPT)"
+   - Paste your API key
+   - Click "Save Settings"
+   - Click "Test Connection"
+
+3. TEST (2 minutes)
+   - Go to AI Vibe Coder > Code Generator
+   - Select "Shortcode"
+   - Enter: "Create a button shortcode"
+   - Click "Generate Code with AI"
+   - Copy the generated code
+
+4. USE (30 seconds)
+   - Go to a post or page
+   - Add the shortcode
+   - View on frontend
+
+SUCCESS! Your plugin is working!
+
+================================================
+SUPPORT RESOURCES
+================================================
+
+Need more help?
+
+1. Check the WordPress Plugin Directory for FAQ
+2. Review WordPress.org support forums
+3. Contact your hosting provider for server issues
+4. Check OpenAI/Anthropic documentation for API issues
+
+================================================
+END OF INSTALLATION GUIDE
+================================================
